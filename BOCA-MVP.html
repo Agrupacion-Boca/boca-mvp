@@ -388,13 +388,21 @@ footer strong{color:#fff;}
 
       <div class="fila-doble">
         <div class="campo">
-          <label for="nombre">Nombre y apellido</label>
+          <label for="nombre">Nombre</label>
           <input type="text" id="nombre" required>
         </div>
+        <div class="campo">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" required>
+        </div>
+      </div>
+
+      <div class="fila-doble">
         <div class="campo">
           <label for="dni">DNI</label>
           <input type="text" id="dni" inputmode="numeric" required>
         </div>
+        <div class="campo"></div>
       </div>
 
       <div class="fila-doble" id="bloque-socio">
@@ -494,6 +502,16 @@ footer strong{color:#fff;}
     }
   });
 
+  // Mismo algoritmo que el script de carga del padrón: sha256, lowercase+trim, primeros 16 hex.
+  // El DNI y el número de socio nunca viajan en texto plano.
+  async function hashShort(text){
+    if(!text || !text.trim()) return null;
+    const normalizado = text.trim().toLowerCase();
+    const encoded = new TextEncoder().encode(normalizado);
+    const digest = await crypto.subtle.digest('SHA-256', encoded);
+    return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2,'0')).join('').slice(0,16);
+  }
+
   const form = document.getElementById('form-registro');
   const submitBtn = document.getElementById('submit-btn');
   const msgOk = document.getElementById('msg-ok');
@@ -506,38 +524,40 @@ footer strong{color:#fff;}
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
-    const registro = {
-      nombre: document.getElementById('nombre').value.trim(),
-      dni: document.getElementById('dni').value.trim(),
-      numero_socio: esSocio ? (document.getElementById('numero_socio').value.trim() || null) : null,
-      categoria: esSocio ? (document.getElementById('categoria').value || null) : 'no_socio',
-      email: document.getElementById('email').value.trim(),
-      pais: document.getElementById('pais').value.trim() || 'Argentina',
-      telefono: document.getElementById('telefono').value.trim() || null
-    };
+    const dni = document.getElementById('dni').value.trim();
+    const numeroSocioRaw = esSocio ? document.getElementById('numero_socio').value.trim() : '';
 
     try{
-      const { error } = await supabaseClient.from('registros').insert([registro]);
-      if(error){
-        if(error.code === '23505'){
-          msgError.textContent = 'Ese DNI ya está registrado. ¡Gracias por sumarte!';
-        } else {
-          msgError.textContent = 'No pudimos guardar tu registro. Probá de nuevo en un rato.';
+      const hash_dni = await hashShort(dni);
+      const hash_socio = numeroSocioRaw ? await hashShort(numeroSocioRaw) : null;
+
+      const { data, error } = await supabaseClient.functions.invoke('validar-alta', {
+        body: {
+          hash_dni,
+          hash_socio,
+          nombre: document.getElementById('nombre').value.trim(),
+          apellido: document.getElementById('apellido').value.trim(),
+          numero_socio: numeroSocioRaw || null,
+          categoria: esSocio ? (document.getElementById('categoria').value || null) : 'no_socio',
+          email: document.getElementById('email').value.trim(),
+          pais: document.getElementById('pais').value.trim() || 'Argentina',
+          telefono: document.getElementById('telefono').value.trim() || null
         }
-        msgError.className = 'msg error';
-        msgError.style.display = 'block';
-      } else {
-        msgOk.style.display = 'block';
-        form.reset();
-        toggleWrap.children[0].classList.add('activo');
-        toggleWrap.children[1].classList.remove('activo');
-        bloqueSocio.classList.remove('oculto');
-        esSocio = true;
-        actualizarContador();
-      }
+      });
+
+      if(error) throw error;
+
+      msgOk.textContent = data?.message || '¡Gracias! Ya formás parte de Boca Boca Boca. Tu Carnet Digital BBB te llega por email en breve.';
+      msgOk.style.display = 'block';
+      form.reset();
+      toggleWrap.children[0].classList.add('activo');
+      toggleWrap.children[1].classList.remove('activo');
+      bloqueSocio.classList.remove('oculto');
+      esSocio = true;
+      actualizarContador();
     }catch(err){
       console.error(err);
-      msgError.textContent = 'Hubo un problema de conexión. Probá de nuevo.';
+      msgError.textContent = 'Hubo un problema de conexión. Probá de nuevo en unos minutos.';
       msgError.className = 'msg error';
       msgError.style.display = 'block';
     }finally{
