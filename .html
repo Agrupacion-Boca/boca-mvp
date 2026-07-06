@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2D6B">
+<title>Boca Boca Boca — Asociate a la agrupación</title>
+<meta name="description" content="Somos socios y bosteros armando una agrupación digital para Boca Juniors. Seas socio o no, sumate y sacá tu Carnet Digital BBB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: only light;
+  --azul-bombonera:#0B2D6B;
+  --azul-bombonera-deep:#071B42;
+  --azul-medio:#142A57;
+  --oro-boca:#FFC72C;
+  --oro-boca-soft:#FFE08A;
+  --negro-tribuna:#11131A;
+  --fondo:#EAF0FB;
+  --fondo-card:#FFFFFF;
+  --gris-dato:#5B6270;
+  --borde:#DADFEA;
+  --font-display:'Anton','Arial Narrow',sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'IBM Plex Mono','Courier New',monospace;
+  --max-width:760px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--fondo);}
+body{
+  background:var(--fondo);
+  color:var(--negro-tribuna);
+  font-family:var(--font-body);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+:focus-visible{outline:3px solid var(--oro-boca);outline-offset:2px;}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--azul-bombonera-deep);
+  background-image:
+    radial-gradient(ellipse 70% 100% at 15% 0%, rgba(255,199,44,0.08) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size:auto,160px;
+  border-bottom:1px solid rgba(255,199,44,0.25);
+  padding:12px 20px;
+}
+.nav-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--oro-boca);color:var(--azul-bombonera-deep);
+  display:grid;place-items:center;
+  font-family:var(--font-display);font-size:18px;
+  box-shadow:0 0 0 2px rgba(255,199,44,0.4);
+  flex-shrink:0;
+}
+.brand-name{
+  font-family:var(--font-display);
+  font-size:16px;letter-spacing:.03em;text-transform:uppercase;
+  color:#fff;display:flex;gap:6px;
+}
+.brand-name .accent{color:var(--oro-boca);}
+.nav-cta{
+  background:var(--oro-boca);color:var(--azul-bombonera-deep);
+  padding:8px 16px;border-radius:999px;
+  font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap;
+}
+
+main{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+
+.hero{
+  background:var(--azul-bombonera);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,199,44,0.10) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size:auto,160px;
+  color:#fff;
+  margin:0 -20px;
+  padding:56px 20px 44px;
+  text-align:center;
+  border-bottom:3px solid var(--oro-boca);
+}
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--oro-boca);
+  border:1px solid rgba(255,199,44,0.4);
+  padding:5px 14px;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+h1{
+  font-family:var(--font-display);
+  font-size:38px;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+  line-height:1.1;
+  margin-bottom:16px;
+}
+h1 .accent{color:var(--oro-boca);}
+.hero p{
+  font-size:16.5px;
+  color:#D7DEF0;
+  max-width:460px;
+  margin:0 auto 28px;
+}
+.btn{
+  display:inline-block;
+  background:var(--oro-boca);
+  color:var(--azul-bombonera-deep);
+  font-weight:800;
+  font-size:16px;
+  padding:15px 32px;
+  border-radius:9px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+.btn:hover{background:var(--oro-boca-soft);}
+
+.contador-box{
+  background:var(--fondo-card);
+  border:1px solid var(--borde);
+  border-radius:16px;
+  padding:34px 24px;
+  margin:-28px 0 44px;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(11,45,107,0.08);
+}
+.contador-eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gris-dato);
+  margin-bottom:8px;
+}
+.contador-numero{
+  font-family:var(--font-display);
+  font-size:58px;
+  color:var(--azul-bombonera);
+  line-height:1;
+}
+.contador-numero .meta{
+  font-family:var(--font-body);
+  font-size:20px;
+  font-weight:600;
+  color:var(--gris-dato);
+}
+.barra{
+  width:100%;
+  height:10px;
+  background:var(--fondo);
+  border:1px solid var(--borde);
+  border-radius:6px;
+  margin:18px 0 10px;
+  overflow:hidden;
+}
+.barra-fill{
+  height:100%;
+  background:linear-gradient(90deg, var(--oro-boca), var(--oro-boca-soft));
+  width:0%;
+  transition:width .6s ease;
+}
+.contador-sub{font-size:13px;color:var(--gris-dato);}
+
+.about{padding:0 0 40px;}
+.about p{font-size:15.5px;color:#2c2c2c;margin-bottom:14px;}
+
+.carnet{
+  background:var(--fondo-card);
+  border:1px solid var(--borde);
+  border-radius:16px;
+  padding:28px 26px;
+  margin-bottom:44px;
+}
+.carnet h2{
+  font-family:var(--font-display);
+  font-size:22px;
+  text-transform:uppercase;
+  color:var(--azul-bombonera);
+  margin-bottom:16px;
+}
+.carnet ul{list-style:none;}
+.carnet li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:15px;
+  color:#333;
+  margin-bottom:14px;
+}
+.carnet li:last-child{margin-bottom:0;}
+.carnet .bullet{
+  flex-shrink:0;
+  width:22px;height:22px;
+  border-radius:50%;
+  background:var(--oro-boca);
+  color:var(--azul-bombonera-deep);
+  font-size:12px;
+  font-weight:800;
+  display:grid;
+  place-items:center;
+  margin-top:1px;
+}
+
+.form-section{padding-bottom:60px;}
+.form-section .eyebrow2{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--azul-bombonera);
+  margin-bottom:8px;
+  display:block;
+}
+.form-section h2{
+  font-family:var(--font-display);
+  font-size:27px;
+  text-transform:uppercase;
+  color:var(--azul-bombonera);
+  margin-bottom:8px;
+}
+.form-section .sub{color:#444;font-size:15px;margin-bottom:24px;}
+
+form{
+  background:var(--fondo-card);
+  border:1px solid var(--borde);
+  border-radius:14px;
+  padding:26px;
+}
+
+.toggle-socio{display:flex;gap:10px;margin-bottom:20px;}
+.toggle-opt{
+  flex:1;
+  text-align:center;
+  padding:13px;
+  border:2px solid var(--borde);
+  border-radius:9px;
+  font-weight:700;
+  font-size:14.5px;
+  cursor:pointer;
+  color:var(--gris-dato);
+  transition:all .15s ease;
+}
+.toggle-opt.activo{
+  border-color:var(--azul-bombonera);
+  background:var(--azul-bombonera);
+  color:#fff;
+}
+
+.campo{margin-bottom:16px;}
+.campo label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  color:var(--azul-medio);
+  margin-bottom:5px;
+}
+.campo input,
+.campo select{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid var(--borde);
+  border-radius:8px;
+  font-size:15px;
+  font-family:inherit;
+  background:#fff;
+}
+.campo input:focus,
+.campo select:focus{outline:none;border-color:var(--azul-bombonera);}
+.fila-doble{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.oculto{display:none;}
+
+@media (max-width:520px){
+  .fila-doble{grid-template-columns:1fr;}
+  h1{font-size:29px;}
+  .contador-numero{font-size:44px;}
+}
+
+.consentimiento{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:13px;color:#444;margin:18px 0;
+}
+.consentimiento input{width:auto;margin-top:3px;}
+
+.submit-btn{
+  width:100%;
+  background:var(--azul-bombonera);
+  color:#fff;
+  font-weight:800;
+  font-size:16px;
+  padding:15px;
+  border:none;
+  border-radius:9px;
+  cursor:pointer;
+}
+.submit-btn:hover{background:var(--azul-medio);}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;}
+
+.carnet-wrap{display:none;}
+.carnet-wrap.visible{display:flex;justify-content:center;padding:20px 0;}
+.carnet{
+  width:100%;
+  max-width:360px;
+  background:var(--azul-bombonera);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(11,45,107,.25);
+}
+.carnet-top{background:var(--azul-bombonera-deep);padding:14px 20px;}
+.carnet-top span{color:var(--oro-boca);font-weight:800;font-size:13px;letter-spacing:1px;font-family:var(--font-body);}
+.carnet-body{padding:22px 20px;}
+.carnet-badge{color:var(--oro-boca-soft);font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px;}
+.carnet-nombre{color:#fff;font-size:22px;font-weight:800;margin-bottom:2px;}
+.carnet-categoria{color:rgba(255,255,255,.65);font-size:13px;margin-bottom:18px;}
+.carnet-numero-box{background:rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;}
+.carnet-numero-label{color:var(--oro-boca-soft);font-size:10px;letter-spacing:1px;margin-bottom:2px;}
+.carnet-numero{color:#fff;font-size:20px;font-weight:800;font-family:var(--font-mono);letter-spacing:1px;}
+.carnet-bottom{background:var(--oro-boca);padding:10px 20px;text-align:center;}
+.carnet-bottom span{color:var(--azul-bombonera);font-size:11px;font-weight:800;}
+.carnet-nota{text-align:center;color:var(--gris-dato);font-size:13px;margin-top:14px;max-width:360px;}
+
+.msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:14px;display:none;}
+.msg.ok{background:#E8F4E8;color:#2A6B2A;display:block;}
+.msg.error{background:#FBE8E8;color:#8B2A2A;display:block;}
+
+footer{
+  background:var(--azul-bombonera-deep);
+  color:#B8C4DE;
+  font-size:12.5px;
+  text-align:center;
+  padding:26px 20px;
+  line-height:1.6;
+}
+footer strong{color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark">B</div>
+      <div class="brand-name">BOCA <span class="accent">BOCA</span> BOCA</div>
+    </div>
+    <a href="#asociarse" class="nav-cta">Asociarme</a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Comunidad digital de socios y bosteros</span>
+  <h1>Somos Boca.<br>Armemos esto <span class="accent">juntos.</span></h1>
+  <p>Una agrupación 100% digital para socios y para quienes todavía no lo son. Sumate y sacá tu Carnet Digital BBB.</p>
+  <a href="#asociarse" class="btn">Quiero asociarme</a>
+</section>
+
+<main>
+
+  <div class="contador-box">
+    <div class="contador-eyebrow">Ya somos parte de esto</div>
+    <div class="contador-numero"><span id="contador">—</span></div>
+    <div class="barra"><div class="barra-fill" id="barra-fill"></div></div>
+    <div class="contador-sub">Vamos camino a los 10.000 — socios y no socios, todos suman</div>
+  </div>
+
+  <section class="about">
+    <p>Esto arrancó como una charla de grupo de amigos, todos hinchas, cansados de mirar desde afuera cómo se define todo en el club. En algún momento dijimos: en vez de putear, armemos algo.</p>
+    <p>No importa si hace 30 años que pagás la cuota o si todavía no sos socio. Boca Boca Boca es la comunidad digital que estamos armando entre todos para que la próxima elección del club, en diciembre de 2027, se juegue distinto.</p>
+  </section>
+
+  <section class="carnet">
+    <h2>Tu Carnet Digital BBB</h2>
+    <ul>
+      <li><span class="bullet">✓</span> Formás parte de una comunidad de socios y bosteros que quiere pesar en las decisiones del club.</li>
+      <li><span class="bullet">✓</span> Tenés tu carnet digital al toque, seas socio o todavía no.</li>
+      <li><span class="bullet">✓</span> Tu registro suma directo al número de gente que estamos juntando de cara a diciembre de 2027.</li>
+    </ul>
+  </section>
+
+  <section class="form-section" id="asociarse">
+    <span class="eyebrow2">Sumate</span>
+    <h2>Asociate a Boca Boca Boca</h2>
+    <p class="sub">Seas socio de Boca o no, tus datos nos sirven igual. Completá esto y te confirmamos tu Carnet Digital BBB por email.</p>
+
+    <form id="form-registro">
+
+      <div class="toggle-socio" id="toggle-socio">
+        <div class="toggle-opt activo" data-valor="si">Soy socio de Boca</div>
+        <div class="toggle-opt" data-valor="no">Todavía no soy socio</div>
+      </div>
+
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required>
+        </div>
+        <div class="campo">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" required>
+        </div>
+      </div>
+
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="dni">DNI</label>
+          <input type="text" id="dni" inputmode="numeric" required>
+        </div>
+        <div class="campo"></div>
+      </div>
+
+      <div class="fila-doble" id="bloque-socio">
+        <div class="campo">
+          <label for="numero_socio">Número de socio (si lo tenés a mano)</label>
+          <input type="text" id="numero_socio">
+        </div>
+        <div class="campo">
+          <label for="categoria">Categoría de socio</label>
+          <select id="categoria">
+            <option value="">Elegí una opción</option>
+            <option value="activo">Activo</option>
+            <option value="vitalicio">Vitalicio</option>
+            <option value="adherente">Adherente</option>
+            <option value="cadete">Cadete</option>
+            <option value="interior">Del interior</option>
+            <option value="exterior">Del exterior</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="campo">
+          <label for="pais">País de residencia</label>
+          <input type="text" id="pais" placeholder="Argentina">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="telefono">Teléfono / WhatsApp (opcional)</label>
+        <input type="tel" id="telefono">
+      </div>
+
+      <div class="consentimiento">
+        <input type="checkbox" id="consentimiento" required>
+        <label for="consentimiento">Acepto que mis datos se usen para confirmar mi asociación a BBB y que me contacten por este tema.</label>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Asociarme a BBB</button>
+
+      <div class="msg" id="msg-ok"></div>
+      <div class="msg" id="msg-error"></div>
+    </form>
+
+    <div class="carnet-wrap" id="carnet-wrap">
+      <div>
+        <div class="carnet" id="carnet">
+          <div class="carnet-top"><span>BOCA BOCA BOCA</span></div>
+          <div class="carnet-body">
+            <div class="carnet-badge" id="carnet-badge">MIEMBRO BBB</div>
+            <div class="carnet-nombre" id="carnet-nombre"></div>
+            <div class="carnet-categoria" id="carnet-categoria"></div>
+            <div class="carnet-numero-box">
+              <div class="carnet-numero-label">N° DE SOCIO BBB</div>
+              <div class="carnet-numero" id="carnet-numero"></div>
+            </div>
+          </div>
+          <div class="carnet-bottom"><span>SOMOS BOCA. ARMEMOS ESTO JUNTOS.</span></div>
+        </div>
+        <p class="carnet-nota">También te lo mandamos por email. Guardá una captura de tu carnet.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Boca Boca Boca</strong> — comunidad digital de socios y bosteros, de cara a las elecciones de Boca Juniors de diciembre de 2027.<br>
+  No afiliada a ningún partido político nacional.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://jovyigkgtcllsjvlddjt.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvdnlpZ2tndGNsbHNqdmxkZGp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxMDA2NTEsImV4cCI6MjA5ODY3NjY1MX0.GgiCamlcCnAHJ1sM7HbLZ-s4kN7r3pz9iAle8a6QXeM";
+
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const META_MIEMBROS = 10000;
+
+  async function actualizarContador(){
+    try{
+      const { data, error } = await supabaseClient.rpc('contar_socios_validados');
+      if(error) throw error;
+      const total = data ?? 0;
+      document.getElementById('contador').innerHTML = total.toLocaleString('es-AR') + ' <span class="meta">/ 10.000</span>';
+      const pct = Math.min(100, (total / META_MIEMBROS) * 100);
+      document.getElementById('barra-fill').style.width = pct + '%';
+    }catch(err){
+      console.error('No se pudo cargar el contador:', err);
+      document.getElementById('contador').textContent = '—';
+    }
+  }
+  actualizarContador();
+  setInterval(actualizarContador, 30000);
+
+  const toggleWrap = document.getElementById('toggle-socio');
+  const bloqueSocio = document.getElementById('bloque-socio');
+  const categoriaSelect = document.getElementById('categoria');
+  let esSocio = true;
+
+  toggleWrap.addEventListener('click', (e) => {
+    const opt = e.target.closest('.toggle-opt');
+    if(!opt) return;
+    [...toggleWrap.children].forEach(c => c.classList.remove('activo'));
+    opt.classList.add('activo');
+    esSocio = opt.dataset.valor === 'si';
+    bloqueSocio.classList.toggle('oculto', !esSocio);
+    if(!esSocio){
+      document.getElementById('numero_socio').value = '';
+      categoriaSelect.value = '';
+    }
+  });
+
+  // Mismo algoritmo que el script de carga del padrón: sha256, lowercase+trim, primeros 16 hex.
+  // El DNI y el número de socio nunca viajan en texto plano.
+  async function hashShort(text){
+    if(!text || !text.trim()) return null;
+    const normalizado = text.trim().toLowerCase();
+    const encoded = new TextEncoder().encode(normalizado);
+    const digest = await crypto.subtle.digest('SHA-256', encoded);
+    return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2,'0')).join('').slice(0,16);
+  }
+
+  const form = document.getElementById('form-registro');
+  const submitBtn = document.getElementById('submit-btn');
+  const msgOk = document.getElementById('msg-ok');
+  const msgError = document.getElementById('msg-error');
+  const carnetWrap = document.getElementById('carnet-wrap');
+
+  function mostrarCarnet(carnet){
+    document.getElementById('carnet-nombre').textContent = `${carnet.nombre} ${carnet.apellido}`;
+    document.getElementById('carnet-categoria').textContent = carnet.categoria || 'Miembro';
+    document.getElementById('carnet-numero').textContent = carnet.numero_bbb;
+
+    const badge = document.getElementById('carnet-badge');
+    if(carnet.estado === 'validado'){
+      badge.textContent = 'SOCIO VERIFICADO';
+    } else if(carnet.estado === 'pendiente'){
+      badge.textContent = 'EN REVISIÓN';
+    } else {
+      badge.textContent = 'MIEMBRO BBB';
+    }
+
+    form.style.display = 'none';
+    carnetWrap.classList.add('visible');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgOk.style.display = 'none';
+    msgError.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const dni = document.getElementById('dni').value.trim();
+    const numeroSocioRaw = esSocio ? document.getElementById('numero_socio').value.trim() : '';
+
+    try{
+      const hash_dni = await hashShort(dni);
+      const hash_socio = numeroSocioRaw ? await hashShort(numeroSocioRaw) : null;
+
+      const { data, error } = await supabaseClient.functions.invoke('validar-alta', {
+        body: {
+          hash_dni,
+          hash_socio,
+          nombre: document.getElementById('nombre').value.trim(),
+          apellido: document.getElementById('apellido').value.trim(),
+          numero_socio: numeroSocioRaw || null,
+          categoria: esSocio ? (document.getElementById('categoria').value || null) : 'no_socio',
+          email: document.getElementById('email').value.trim(),
+          pais: document.getElementById('pais').value.trim() || 'Argentina',
+          telefono: document.getElementById('telefono').value.trim() || null
+        }
+      });
+
+      if(error) throw error;
+
+      if(data?.carnet){
+        mostrarCarnet(data.carnet);
+      } else {
+        msgOk.textContent = data?.message || '¡Gracias! Ya formás parte de Boca Boca Boca.';
+        msgOk.style.display = 'block';
+      }
+      actualizarContador();
+    }catch(err){
+      console.error(err);
+      msgError.textContent = 'Hubo un problema de conexión. Probá de nuevo en unos minutos.';
+      msgError.className = 'msg error';
+      msgError.style.display = 'block';
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Asociarme a BBB';
+    }
+  });
+</script>
+
+</body>
+</html>
